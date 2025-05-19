@@ -6,31 +6,21 @@ int retraso(int tiempo);
 int main(void)
 {
     int tiempo = 0;
-
-    tiempo = retraso(10);
-
+    tiempo = retraso(60);
     if(tiempo)
     {
-        printf("Han pasado 10 segundos");
+        printf("Han pasado 10 segundos\n");
     }
     return 0;
 }
 
 int retraso(int tiempo)
 {
-    int ret;
     time_t inicial;
-
     inicial = time(NULL);
     long int final = inicial + tiempo;
-
-    printf("Inicio");
-
-    printf("Tiempo: %ld", final);
-
-    ret = 1;
-
-    printf("Final");
-
-    return ret;
+    while(inicial < final){
+        inicial = time(NULL);
+    }
+    return 1;
 }
