@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include <math.h>
 #include "comun.h"
 
+// Funciones para determinar propiedades de números y realizar cálculos matemáticos
 int positivo(int num)
 {
     int ret = 0;

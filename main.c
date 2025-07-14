@@ -9,6 +9,7 @@ int main()
     int numero2 = 0;
     int numero3 = 0;
 
+    //Asigna numeros para probar
     printf("Primero: ");
     scanf("%d", &numero1);
     printf("Segundo: ");
@@ -17,6 +18,8 @@ int main()
     scanf("%d", &numero3);
 
 
+    //Asigna a las siguientes variables el resultado de las funciones
+    //y las imprime en pantalla
     int paridad = par(numero1);
     int inparidad = impar(numero1);
     int fRango = rango(numero1);
@@ -33,6 +36,8 @@ int main()
     int hip = hipotenusa(numero1, numero2);
     int tria = triangulo(numero1, numero2);
 
+    //Imprime los resultados
+    printf("Resultados:\n");
     printf("El valor es: %d\n", paridad);
     printf("El valor es: %d\n", inparidad);
     printf("El valor es: %d\n", fRango);

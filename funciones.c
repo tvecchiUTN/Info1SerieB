@@ -3,6 +3,7 @@
 #include "funciones.h"
 #include "comun.h"
 
+#define M_PI 3.14159265358979323846
 #define VERDADERO 1
 #define FALSO 0
 #define ERROR -1
@@ -12,6 +13,7 @@ int par(int num)
 {
     int ret = 0;
 
+    // Si el numero es par, el resto de dividirlo por 2 es 0
     if(num%2 == 0)
     {
         ret = 1;
@@ -25,6 +27,7 @@ int impar(int num)
 {
     int ret = 0;
 
+    // Si el numero es impar, el resto de dividirlo por 2 es 1
     if(par(num) == 0){
         ret = 1;
     }
@@ -36,7 +39,9 @@ int impar(int num)
 int rango(int num)
 {
     int ret = 0;
-
+     
+    // Si el numero esta entre 100 y 500, devuelve 1
+    // Si no, devuelve 0
     if(num >= 100 && num<= 500)
     {
         ret = 1;
@@ -49,7 +54,7 @@ int rango(int num)
 int divisible(int divPrim, int divSeg)
 {
     int ret = 0;
-
+    //Evalua si el segundo numero es divisible por el primero
     if(divSeg%divPrim == 0)
     {
         ret = 1;
@@ -61,6 +66,7 @@ int divisible(int divPrim, int divSeg)
 //Ejercicio 4
 int cuadrado(int num)
 {
+    //Calcula el cuadrado de un numero
     int ret = num * num;
 
     return ret;
@@ -69,6 +75,7 @@ int cuadrado(int num)
 //Ejercicio 5.a
 int cuboEnte(int num)
 {
+    //Calcula el cubo de un numero entero
     int ret = num * num * num;
 
     return ret;
@@ -77,6 +84,7 @@ int cuboEnte(int num)
 //Ejercicio 5.b
 float cuboFlota(float num)
 {
+    //Calcula el cubo de un numero flotante osea decimal
     float ret = num * num * num;
 
     return ret;
@@ -85,8 +93,10 @@ float cuboFlota(float num)
 //Ejercicio 6
 int areaRecta(int base, int altura)
 {
+    // Calcula el area de un rectangulo
+    // Si alguno de los dos valores es negativo, devuelve -1
     int ret = base * altura;
-
+    // Verifica que los valores sean positivos o cero
     if (!positivoCero(ret))
     {
         ret = -1;
@@ -109,9 +119,12 @@ int circulo(int radio)
 //Ejercicio 7.b
 int circulo(int radio)
 {
-
+    // Calcula el area de un circulo
+    // Si el radio es negativo, devuelve -1
     int ret = -1;
 
+    // Verifica que el radio sea positivo o cero
+    // Si es positivo, calcula el area
     if(positivoCero(radio))
     {
         ret = M_PI * radio * radio;
@@ -126,7 +139,8 @@ int circunferencia(int radio)
 {
     int ret = -1;
 
-
+    // Calcula la circunferencia de un circulo
+    // Si el radio es negativo, devuelve -1
     if(positivo(radio))
     {
         int diametro = radio * 2;
@@ -140,7 +154,9 @@ int potencia(int base, int exp)
 {
     int ret = -1;
     int aux = 1;
-
+    
+    // Calcula la potencia de un numero
+    
     if(positivo(exp))
     {
         for(int i = 0; i<exp; i++)
@@ -150,6 +166,7 @@ int potencia(int base, int exp)
         ret = aux;
     }
 
+    // Si la base es distinta de 0 y el exponente es 0, devuelve 1
     if((exp == 0) && (base != 0))
     {
         ret = 1;
@@ -163,7 +180,9 @@ int potencia(int base, int exp)
 int dentroRango(int eval, int extInicial, int extFinal)
 {
     int ret = 0;
-
+    // Verifica si el numero esta dentro del rango
+    // Si el numero es mayor que el extremo inicial y menor que el extremo final, devuelve 1
+    // Si el extremo final es mayor que el extremo inicial, devuelve -1
     if( (eval > extInicial) && (eval < extFinal) )
     {
         ret = 1;
@@ -182,6 +201,8 @@ int dentroRango(int eval, int extInicial, int extFinal)
 int cuadrante(int x, int y)
 {
     int ret;
+    // Determina en que cuadrante se encuentra el punto (x, y)
+    // Retorna 0 si el punto es el origen (0, 0)
 
     //Cuadrantes
     if((x==0) && (y==0))
@@ -205,6 +226,8 @@ int cuadrante(int x, int y)
         ret = 4;
     }
 
+    //Verifica si el punto esta en los ejes
+    // Si el punto esta en el eje X o Y, retorna un valor especifico
     //Ejes
     if((x>0) && (y==0))
     {
@@ -231,6 +254,12 @@ int mayor(int num1, int num2, int num3)
 {
     int ret = num3;
 
+    // Determina el mayor de tres numeros
+    // Si el primer numero es mayor que el segundo y el tercero, lo asigna como mayor
+    // Si el segundo numero es mayor que el primero y el tercero, lo asigna como mayor
+    // Si el tercero es mayor que los otros dos, lo asigna como mayor.
+
+    //Dicho en otras palabras, busca que numero es mayor
     if(num1 > num2)
     {
         if(num1 > num3)
@@ -251,6 +280,8 @@ int mayor(int num1, int num2, int num3)
 //Ejercicio 13
 int hipotenusa(int base, int altura)
 {
+    // Calcula la hipotenusa de un triangulo rectangulo
+    
     double aux = (double)cuadrado(base) + (double)cuadrado(altura);
 
     double ret = sqrt(aux);
@@ -261,6 +292,8 @@ int hipotenusa(int base, int altura)
 //Ejercicio 15
 int triangulo(int base, int altura)
 {
+    // Calcula el area de un triangulo
+    // Si alguno de los dos valores es negativo, devuelve -1
     int ret = -1;
     if(!positivo(base))
     {
