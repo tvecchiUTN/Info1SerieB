@@ -39,7 +39,7 @@ int impar(int num)
 int rango(int num)
 {
     int ret = 0;
-     
+
     // Si el numero esta entre 100 y 500, devuelve 1
     // Si no, devuelve 0
     if(num >= 100 && num<= 500)
@@ -154,9 +154,9 @@ int potencia(int base, int exp)
 {
     int ret = -1;
     int aux = 1;
-    
+
     // Calcula la potencia de un numero
-    
+
     if(positivo(exp))
     {
         for(int i = 0; i<exp; i++)
@@ -281,7 +281,7 @@ int mayor(int num1, int num2, int num3)
 int hipotenusa(int base, int altura)
 {
     // Calcula la hipotenusa de un triangulo rectangulo
-    
+
     double aux = (double)cuadrado(base) + (double)cuadrado(altura);
 
     double ret = sqrt(aux);

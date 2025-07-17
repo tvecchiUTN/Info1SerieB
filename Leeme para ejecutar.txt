@@ -1,0 +1,8 @@
+Para ejecutar introduccir lo siguiente:
+
+gcc main.c funciones.c comun.c -Wall -o salida -lm
+
+La primera parte es la funcion main, la segunda parte son las funciones y la tercera las funciones comunes
+-Wall ejecuta todos los errores que pueden haber
+-o Le cambia el nombre al ejecutable
+-lm muy importante, sin esto, no se puede calcular la hipotenusa
